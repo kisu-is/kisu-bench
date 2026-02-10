@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 echo "benchmarking kisu..."
-cd kisu && cargo build --release && cd -
-hyperfine 'kisu/target/release/kisu-bench'
+hyperfine 'kisu-cli kisu/bench.is'
 
 echo "benchmarking nix..."
 hyperfine 'nix-instantiate --eval nix/bench.nix --quiet'

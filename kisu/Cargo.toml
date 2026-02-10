@@ -1,7 +1,0 @@
-[package]
-name = "kisu-bench"
-version = "0.1.0"
-edition = "2024"
-
-[dependencies]
-kisu = "0.1.3"
