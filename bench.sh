@@ -1,9 +1,18 @@
 #!/usr/bin/env bash
+
+# records
 echo "benchmarking kisu..."
-hyperfine 'kisu-cli kisu/bench.is'
+hyperfine -N 'kisu-cli kisu/bench.is'
 
 echo "benchmarking nix..."
-hyperfine 'nix-instantiate --eval nix/bench.nix --quiet'
+hyperfine -N 'nix-instantiate --eval nix/bench.nix --quiet'
 
 echo "benchmarking nickel..."
-hyperfine 'nickel eval nickel/bench.ncl'
+hyperfine -N 'nickel eval nickel/bench.ncl'
+
+# fib
+echo "benchmarking kisu..."
+hyperfine -N 'kisu-cli kisu/fib.is'
+
+echo "benchmarking nickel..."
+hyperfine -N 'nickel eval nickel/fib.ncl'
